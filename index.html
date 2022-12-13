@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item" @mouseover="isMouseHover()">
+                <div class="item" @mouseover="isMouseHover()" @mouseleave="start()">
                     <img :src="imageList[activeIndex].image" alt="Slide image">
                     <div class="text">
                         <h3>

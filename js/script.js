@@ -35,6 +35,11 @@ createApp({
     },
 
     methods: {
+        start(){
+            this.interval = setInterval(() => {
+                this.nextSlide();
+            }, 3000);
+        },
         previuosSlide(){
             this.activeIndex--;
             if (this.activeIndex < 0) {
@@ -56,11 +61,6 @@ createApp({
     },
 
     created() {
-        this.interval = setInterval(() => {
-            this.activeIndex++;
-            if (this.activeIndex >= this.imageList.length) {
-                this.activeIndex = 0;
-            }
-        }, 3000)
+        this.start();
     }
 }).mount('#app');
