@@ -50,5 +50,14 @@ createApp({
         clickedThumb(clickIndex){
             this.activeIndex = clickIndex;
         },
+    },
+
+    created() {
+        setInterval(() => {
+            this.activeIndex++;
+            if (this.activeIndex >= this.imageList.length) {
+                this.activeIndex = 0;
+            }
+        }, 3000);
     }
 }).mount('#app');
