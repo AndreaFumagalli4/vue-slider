@@ -18,6 +18,14 @@
 
                 <div class="item">
                     <img :src="imageList[activeIndex].image" alt="Slide image">
+                    <div class="text">
+                        <h3>
+                            {{ imageList[activeIndex].title }}
+                        </h3>
+                        <p>
+                            {{ imageList[activeIndex].text }}
+                        </p>
+                    </div>
                     <!-- <img src="img/01.webp" alt="Spiderman" />
                     <div class="text">
                         <h3>Spiderman</h3>
