@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            mouseHover : false,
             activeIndex : 0,
             imageList : [
                 {
@@ -50,14 +51,19 @@ createApp({
         clickedThumb(clickIndex){
             this.activeIndex = clickIndex;
         },
+        isMouseHover(){
+            this.mouseHover = true;
+        },
     },
 
     created() {
-        setInterval(() => {
-            this.activeIndex++;
-            if (this.activeIndex >= this.imageList.length) {
-                this.activeIndex = 0;
-            }
-        }, 3000);
+        if (!this.mouseHover) {
+            setInterval(() => {
+                this.activeIndex++;
+                if (this.activeIndex >= this.imageList.length) {
+                    this.activeIndex = 0;
+                }
+            }, 3000);
+        }
     }
 }).mount('#app');
