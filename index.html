@@ -41,7 +41,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="previuosSlide()"></div>
                     <div class="next" @click="nextSlide()"></div>
-                    <div v-for="(element, index) in imageList" :class="(index === activeIndex) ? 'thumb active' : 'thumb' ">
+                    <div v-for="(element, index) in imageList" :class="(index === activeIndex) ? 'thumb active' : 'thumb' " @click="clickedThumb(index)">
                         <img :src="imageList[index].image" alt="Thumb image">
                     </div>
                     <!-- <div class="thumb active">

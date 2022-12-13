@@ -47,5 +47,8 @@ createApp({
                 this.activeIndex = 0;
             }
         },
+        clickedThumb(clickIndex){
+            this.activeIndex = clickIndex;
+        },
     }
 }).mount('#app');
